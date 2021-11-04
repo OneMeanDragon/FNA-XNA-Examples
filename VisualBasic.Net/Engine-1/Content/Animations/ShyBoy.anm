@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <animation>
+    <animationList>
+      <Animation>
+        <animationOrder>
+          <int>0</int>
+          <int>1</int>
+          <int>2</int>
+          <int>3</int>
+          <int>4</int>
+          <int>5</int>
+          <int>6</int>
+          <int>7</int>
+          <int>8</int>
+          <int>9</int>
+          <int>10</int>
+          <int>11</int>
+          <int>12</int>
+          <int>13</int>
+        </animationOrder>
+        <name>Run Left</name>
+        <speed>4</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>0</int>
+          <int>1</int>
+          <int>2</int>
+          <int>3</int>
+          <int>4</int>
+          <int>5</int>
+          <int>6</int>
+          <int>7</int>
+          <int>8</int>
+          <int>9</int>
+          <int>10</int>
+          <int>11</int>
+          <int>12</int>
+          <int>13</int>
+        </animationOrder>
+        <name>Run Right</name>
+        <speed>4</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>98</int>
+          <int>99</int>
+          <int>100</int>
+          <int>101</int>
+          <int>102</int>
+        </animationOrder>
+        <name>Idle Left</name>
+        <speed>16</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>98</int>
+          <int>99</int>
+          <int>100</int>
+          <int>101</int>
+          <int>102</int>
+        </animationOrder>
+        <name>Idle Right</name>
+        <speed>16</speed>
+      </Animation>
+    </animationList>
+    <width>128</width>
+    <height>128</height>
+    <gridX>14</gridX>
+    <gridY>8</gridY>
+  </animation>
+  <texturePath>Textures\spritesheet.png</texturePath>
+</AnimationData>
