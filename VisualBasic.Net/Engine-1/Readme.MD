@@ -1,5 +1,5 @@
 # About
-The original auther from YouTube named [Michael Hicks](https://www.youtube.com/channel/UCsiPXCHman-xRFQ3jwvFj1A), posted a series back in 2018 designing a Game Engine with the FNA-XNA library using [C#](https://docs.microsoft.com/en-us/dotnet/csharp/).
+The original auther from [YouTube](https://www.youtube.com/) named [Michael Hicks](https://www.youtube.com/channel/UCsiPXCHman-xRFQ3jwvFj1A), posted a series back in 2018 designing a Game Engine with the FNA-XNA library using [C#](https://docs.microsoft.com/en-us/dotnet/csharp/).
 
 ## Conclusion
 This is that same GameEngine and editor which you would have ended up with at the end of [his series](https://www.youtube.com/watch?v=WQOebBVIB0I) done in [VisualBasic.Net](https://docs.microsoft.com/en-us/dotnet/visual-basic/), go give his series a watch.
