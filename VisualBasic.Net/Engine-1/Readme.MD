@@ -11,3 +11,6 @@ This is that same GameEngine and editor which you would have ended up with at th
     - [FNA](https://github.com/FNA-XNA/FNA/) _You must compile this on your own there is no NuGet package_
   - Runtimes
     - you will find the runtimes for [FNA](https://github.com/FNA-XNA/FNA/) in their [wiki page](https://github.com/FNA-XNA/FNA/wiki/1:-Download-and-Update-FNA#2-download-native-libraries)
+
+## Things I added to the current structure
+  - Basic 1 Player controller support
