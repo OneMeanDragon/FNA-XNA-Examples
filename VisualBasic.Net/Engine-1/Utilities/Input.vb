@@ -39,18 +39,26 @@ Namespace GameEngine
             Return gamepadState.IsButtonUp(button)
         End Function
         Shared Function ButtonPressed(button As Buttons) As Boolean
+#If DEBUG Then
             If gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = False Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = False)
+#End If
         End Function
         Shared Function LeftStickPressed(button As Buttons) As Boolean
+#If DEBUG Then
             If gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = True Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = True)
+#End If
         End Function
 #End Region
 
@@ -63,43 +71,63 @@ Namespace GameEngine
         End Function
 
         Shared Function KeyPressed(ByVal input As Keys) As Boolean
+#If DEBUG Then
             If keyboardState.IsKeyDown(input) = True AndAlso lastKeyboardState.IsKeyDown(input) = False Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (keyboardState.IsKeyDown(input) = True AndAlso lastKeyboardState.IsKeyDown(input) = False)
+#End If
         End Function
 
         Shared Function MouseLeftDown() As Boolean
+#If DEBUG Then
             If mouseState.LeftButton = ButtonState.Pressed Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (mouseState.LeftButton = ButtonState.Pressed)
+#End If
         End Function
 
         Shared Function MouseRightDown() As Boolean
+#If DEBUG Then
             If mouseState.RightButton = ButtonState.Pressed Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (mouseState.RightButton = ButtonState.Pressed)
+#End If
         End Function
 
         Shared Function MouseLeftClicked() As Boolean
+#If DEBUG Then
             If mouseState.LeftButton = ButtonState.Pressed AndAlso lastMouseState.LeftButton = ButtonState.Released Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (mouseState.LeftButton = ButtonState.Pressed AndAlso lastMouseState.LeftButton = ButtonState.Released)
+#End If
         End Function
 
         Function MouseRightClicked() As Boolean
+#If DEBUG Then
             If mouseState.RightButton = ButtonState.Pressed AndAlso lastMouseState.RightButton = ButtonState.Released Then
                 Return True
             Else
                 Return False
             End If
+#Else
+            Return (mouseState.RightButton = ButtonState.Pressed AndAlso lastMouseState.RightButton = ButtonState.Released)
+#End If
         End Function
 
         Shared Function MousePositionCamera() As Vector2
