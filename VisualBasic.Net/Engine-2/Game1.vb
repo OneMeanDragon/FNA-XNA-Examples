@@ -36,6 +36,8 @@ Namespace GameEngine
         ' 3D
         Private basic3d As Basic3DObjects
 
+        Private landscape As Model
+
 
         Public Sub New()
             Dim desktop_width = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width - 10
@@ -79,9 +81,15 @@ Namespace GameEngine
         Protected Overrides Sub LoadContent()
             font = Content.Load(Of SpriteFont)("Fonts\\Arial")
 
-            basic3d.AddFloor(200, 200, Vector3.Zero, Vector3.Zero, "Images\\test_image", Nothing)
+            ' BASIC 3D
+            basic3d.AddFloor(200, 200, Vector3.Zero, New Vector3(3.14F, 0, 0), "Images\\test_image", Nothing)
+            basic3d.objex(0).pos.Y = -68 : basic3d.objex(0).UpdateTransform()
             basic3d.AddCube(50, 50, 50, Vector3.Zero, Vector3.Zero, "Images\\test_image", Nothing)
             basic3d.objex(1).pos = New Vector3(30, -40, -30)
+
+            ' 3D MODEL LOADING
+            landscape = Content.Load(Of Model)("Models\\Landscapes\\landscape")
+
         End Sub
 
         Protected Overrides Sub UnloadContent()
@@ -126,6 +134,8 @@ Namespace GameEngine
 
             ' Render scene objects
             basic3d.Draw(cam)
+            ' Render models
+            drawmodel(landscape)
 
             ' Draw maintarget to backbuffer
             gpu.SetRenderTarget(Nothing)
@@ -134,6 +144,26 @@ Namespace GameEngine
             spriteBat.End()
 
             MyBase.Draw(gameTime)
+        End Sub
+
+        Private Sub DrawModel(inModel As Model)
+            'dim transforms(inmodel.bones.count) as matrix
+            'model.copyabsolutebonetransformsto(transforms) 'get model transforms
+            For Each mesh As ModelMesh In inModel.Meshes
+                For Each effect As BasicEffect In mesh.Effects
+                    With effect
+                        .EnableDefaultLighting()
+                        .PreferPerPixelLighting = True
+                        .TextureEnabled = True
+                        .View = cam.view
+                        .Projection = cam.proj
+                        .AmbientLightColor = New Vector3(0.2F, 0.1F, 0.3F)
+                        .DiffuseColor = New Vector3(0.95F, 0.96F, 0.85F)
+                        '.World = world_rotation * transforms(mesh.parentbone.index) * matrix.translationmatrix
+                    End With
+                Next
+                mesh.Draw()
+            Next
         End Sub
 
     End Class
