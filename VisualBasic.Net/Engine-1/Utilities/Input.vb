@@ -8,17 +8,51 @@ Imports Microsoft.Xna.Framework.Graphics
 
 Namespace GameEngine
     Public Class Input
+        ' Keyboard
         Private Shared keyboardState As KeyboardState = Keyboard.GetState()
         Private Shared lastKeyboardState As KeyboardState
+        ' Mouse
         Private Shared mouseState As MouseState
         Private Shared lastMouseState As MouseState
+        ' Gamepad
+        Const MaxGamepads As Integer = 4
+        Private Shared gamepadState As GamePadState = GamePad.GetState(PlayerIndex.One)
+        Private Shared lastGamepadState As GamePadState
 
         Shared Sub Update()
+            ' Keyboard
             lastKeyboardState = keyboardState
             keyboardState = Keyboard.GetState()
+            ' Mouse
             lastMouseState = mouseState
             mouseState = Mouse.GetState()
+            ' Gamepad
+            lastGamepadState = gamepadState
+            gamepadState = GamePad.GetState(PlayerIndex.One) 'depending on the amount were using..
         End Sub
+
+#Region "GamePad"
+        Shared Function IsButtonDown(button As Buttons) As Boolean
+            Return gamepadState.IsButtonDown(button)
+        End Function
+        Shared Function IsButtonUp(button As Buttons) As Boolean
+            Return gamepadState.IsButtonUp(button)
+        End Function
+        Shared Function ButtonPressed(button As Buttons) As Boolean
+            If gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = False Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+        Shared Function LeftStickPressed(button As Buttons) As Boolean
+            If gamepadState.IsButtonDown(button) = True AndAlso lastGamepadState.IsButtonDown(button) = True Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+#End Region
 
         Shared Function IsKeyDown(ByVal input As Keys) As Boolean
             Return keyboardState.IsKeyDown(input)

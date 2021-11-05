@@ -64,29 +64,29 @@ Namespace GameEngine
 
         Private Sub CheckInput(vList As List(Of GameObject), vMap As Map)
             If Character._applyGravity = False Then
-                If Input.IsKeyDown(Keys.D) = True Then
+                If Input.IsKeyDown(Keys.D) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickRight) = True Then
                     MoveRight()
-                ElseIf Input.IsKeyDown(Keys.A) = True Then
+                ElseIf Input.IsKeyDown(Keys.A) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickLeft) = True Then
                     MoveLeft()
                 End If
 
-                If Input.IsKeyDown(Keys.S) = True Then
+                If Input.IsKeyDown(Keys.S) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickDown) = True Then
                     MoveDown()
-                ElseIf Input.IsKeyDown(Keys.W) = True Then
+                ElseIf Input.IsKeyDown(Keys.W) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickUp) = True Then
                     MoveUp()
                 End If
             Else
-                If Input.IsKeyDown(Keys.D) = True Then
+                If Input.IsKeyDown(Keys.D) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickRight) = True Then
                     MoveRight()
-                ElseIf Input.IsKeyDown(Keys.A) = True Then
+                ElseIf Input.IsKeyDown(Keys.A) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickLeft) = True Then
                     MoveLeft()
                 End If
-                If Input.KeyPressed(Keys.W) = True Then
+                If Input.KeyPressed(Keys.W) = True OrElse Input.LeftStickPressed(Buttons.LeftThumbstickUp) = True Then
                     Jump(vMap)
                 End If
             End If
 
-            If Input.KeyPressed(Keys.Space) = True Then
+            If Input.KeyPressed(Keys.Space) = True OrElse Input.ButtonPressed(Buttons.RightTrigger) = True Then
                 Fire()
             End If
         End Sub
