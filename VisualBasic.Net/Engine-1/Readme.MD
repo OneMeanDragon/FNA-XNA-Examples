@@ -14,6 +14,6 @@ This is that same GameEngine and editor which you would have ended up with at th
 
 ## Things I added to the current structure
   - Basic 1 Player controller support
-    - PS4 Controller _i would asume that the xbox controler controls for this would be the exact same_
+    - [PS4 Controller](https://direct.playstation.com/en-us/accessories/accessory/dualshock4-wireless-controller-for-ps4-jet-black.3001538) _i would asume that the xbox controler controls for this would be the exact same_
       - Left Stick for (Left, Right, Up _jump_)
       - Right Trigger _shoot_
