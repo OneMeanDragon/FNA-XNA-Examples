@@ -79,6 +79,15 @@
     <Content Include="Content\Models\Landscapes\ForestArea1CompleteMap_0.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Models\Skys\sky_model.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\Skys\skydome1_0.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\Skys\cloud_layer_0.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\" />
@@ -94,6 +103,7 @@
     <Compile Include="GameEngine\Basic3DObjects.vb" />
     <Compile Include="GameEngine\Camera.vb" />
     <Compile Include="GameEngine\Input.vb" />
+    <Compile Include="GameEngine\Sky.vb" />
     <Compile Include="Main.vb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

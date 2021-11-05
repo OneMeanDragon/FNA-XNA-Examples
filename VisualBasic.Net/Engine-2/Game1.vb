@@ -37,6 +37,7 @@ Namespace GameEngine
         Private basic3d As Basic3DObjects
 
         Private landscape As Model
+        Private mSky As Sky
 
 
         Public Sub New()
@@ -74,6 +75,7 @@ Namespace GameEngine
             ' INIT 3D
             cam = New Camera(gpu, Vector3.Down, inp)
             basic3d = New Basic3DObjects(gpu, cam.up, Content)
+            mSky = New Sky(gpu, Content)
 
             MyBase.Initialize()
         End Sub
@@ -88,6 +90,7 @@ Namespace GameEngine
             basic3d.objex(1).pos = New Vector3(30, -40, -30)
 
             ' 3D MODEL LOADING
+            mSky.Load("Models\\Skys\\sky_model")
             landscape = Content.Load(Of Model)("Models\\Landscapes\\landscape")
 
         End Sub
@@ -128,14 +131,15 @@ Namespace GameEngine
         Protected Overrides Sub Draw(ByVal gameTime As GameTime)
             gpu.SetRenderTarget(MainTarget)
 
-            Set3DStates()
-
-            gpu.Clear(ClearOptions.Target Or ClearOptions.DepthBuffer, Color.CornflowerBlue, 1.0F, 0)
+            gpu.Clear(ClearOptions.Target Or ClearOptions.DepthBuffer, Color.Black, 1.0F, 0)
 
             ' Render scene objects
+            mSky.Draw(cam)
+            Set3DStates()
             basic3d.Draw(cam)
+
             ' Render models
-            drawmodel(landscape)
+            DrawModel(landscape)
 
             ' Draw maintarget to backbuffer
             gpu.SetRenderTarget(Nothing)
@@ -159,6 +163,11 @@ Namespace GameEngine
                         .Projection = cam.proj
                         .AmbientLightColor = New Vector3(0.2F, 0.1F, 0.3F)
                         .DiffuseColor = New Vector3(0.95F, 0.96F, 0.85F)
+
+                        .FogEnabled = True
+                        .FogStart = 2.0F
+                        .FogEnd = 500.0F
+                        .FogColor = New Vector3(0.04F, 0.0F, 0.02F)
                         '.World = world_rotation * transforms(mesh.parentbone.index) * matrix.translationmatrix
                     End With
                 Next
