@@ -1,6 +1,9 @@
 # About
 The original auther from [YouTube](https://www.youtube.com/) named [AlienScribble](https://www.youtube.com/channel/UCbxVu_JGFy1UKDRLCFTYanw), posted a series back in Apr 10, 2019 designing a Game Engine with the xna/fna/monogame library using [C#](https://docs.microsoft.com/en-us/dotnet/csharp/).
 
+# NOTE
+The series went off course and went into MONOGAME specific function calls, this example will likely not be finished from here on.
+
 ## Conclusion
 This is that same GameEngine which you would have ended up with at the end of his [third video](https://www.youtube.com/watch?v=LyH45JpPLMU) in the series done in [VisualBasic.Net](https://docs.microsoft.com/en-us/dotnet/visual-basic/), go give his [series](https://www.youtube.com/playlist?list=PLG6XrMFqMJUBOPVTJrGJnIDDHHF1HTETc) a watch.
 
