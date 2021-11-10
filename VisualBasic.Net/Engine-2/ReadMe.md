@@ -1,4 +1,4 @@
-# ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Will not be continued on my end`
+# ![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) `Will not be continued on my end`
 Later Videos in the series that this is from do not work with the latest Monogame, there is missing Functions from the framework itself, aswell as their tool will not compile the provided [".fx"](https://github.com/AlienScribble/SkinMesh180Bones/blob/master/My3DGame/Content/MySkinFX.fx) files any longer. There for what is here is here, I was going to throw it in its own Monogame example folder but its just not worth the time anylonger.
 
 # About
